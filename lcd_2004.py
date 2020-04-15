@@ -39,24 +39,24 @@ class lcd:
       self.lcd_write_four_bits(RS | ((cmd << 4) & 0xF0))
 
    def set_line(self,line,col=0):
-      if line == 1:
+      if line == 0:
          self.lcd_write(0x80+col)
-      if line == 2:
+      if line == 1:
          self.lcd_write(0xC0+col)
-      if line == 3:
+      if line == 2:
          self.lcd_write(0x94+col)
-      if line == 4:
+      if line == 3:
          self.lcd_write(0xD4+col)
 
-   def lcd_print(self, string, line=1,col=0):
+   def lcd_print(self, string, line=0,col=0):
       self.set_line(line,col)
       i = 1
       for char in string:
-         if ((i > Width) & (line < 4)):
+         if ((i > Width) & (line < 3)):
             line=line+1
             self.set_line(line,0)
             i = 1
-         if ((i > Width) & (line == 4)):
+         if ((i > Width) & (line == 3)):
 			 break
          self.lcd_write(ord(char),RS)
          i = i + 1
