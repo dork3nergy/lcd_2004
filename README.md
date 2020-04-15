@@ -8,10 +8,10 @@ USAGE:
 
 Functions implemented are :
 
-  lcd_clear() - Clear Screen<br>
-  lcd_backlight(boolean) - Set Backlight on or off<br>
-  lcd_print(string,x,y) - print string starting on row y(0-3) and column x(0-19)<br>
-<p>
+  <b>lcd_clear()</b> - <i>Clear Screen</i><br>
+  <b>lcd_backlight(boolean)</b> - <i>Set Backlight on or off</i><br>
+  <b>lcd_print(string,line,column)</b> - <i>print string starting on row y(1-4) and column x(0-19)</i><br>
+
 Long strings will wrap to the next line.
 If you try to print beyond the bottom of the screen it simply cuts it off.
 

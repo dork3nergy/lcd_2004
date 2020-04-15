@@ -3,7 +3,7 @@ from time import sleep
 
 #Usage: lcd_2004(Device Address, SCL PIN, SDA PIN)
 
-lcd=lcd_2004.lcd(39,22,21)
+lcd=lcd_2004.lcd(39,22,21) #Change to match your device (Address, SCL Pin, SDA Pin)
 lcd.lcd_backlight(True)
 lcd.lcd_print("Long strings will wrap to the next line....",1,0)
 sleep(2)
