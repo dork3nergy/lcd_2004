@@ -61,11 +61,9 @@ class lcd:
          self.lcd_write(ord(char),RS)
          i = i + 1
 
-      
-   # clear lcd and set to home
    def lcd_clear(self):
-      self.lcd_write(0x01)
-      self.lcd_write(0x02)
+      self.lcd_write(0x01) #Clear Screen
+      self.lcd_write(0x02) #Set Home
 
    def lcd_backlight(self, on):
       if on:
