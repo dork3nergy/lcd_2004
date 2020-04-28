@@ -22,7 +22,6 @@ class lcd:
       self.lcd_write(0x04 | 0x02) #Set Entry Mode Left -> Right
       sleep_ms(300)
 
-   # clocks EN to latch command
    def lcd_strobe(self, data):
       self.i2c.writeto(self.address,bytes([data | Enable | self.BKLIGHT]))
       sleep_ms(1)
@@ -60,6 +59,12 @@ class lcd:
 			 break
          self.lcd_write(ord(char),RS)
          i = i + 1
+
+   def lcd_off(self):
+      self.lcd_write(0x08 | 0x00)
+
+   def lcd_on(self):
+      self.lcd_write(0x08 | 0x04)
 
    def lcd_clear(self):
       self.lcd_write(0x01) #Clear Screen

@@ -1,4 +1,4 @@
-This may exist elsewhere but here is a library to control to a 20x4 LCD display that uses a SPLC780D control IC.
+This may exist elsewhere but here is a I2C library to control to a 20x4 LCD display that uses a SPLC780D control IC.
 
 I wrote it for use on an ESP32.  Not sure if it work on a 8266.
 
@@ -10,8 +10,10 @@ Functions implemented are :
 
   <b>lcd_clear()</b> - <i>Clear Screen</i><br>
   <b>lcd_backlight(boolean)</b> - <i>Set Backlight on or off</i><br>
-  <b>lcd_print(string,line,column)</b> - <i>print string starting on row y(1-4) and column x(0-19)</i><br>
-
+  <b>lcd_print(string,line,column)</b> - <i>print string starting on line(1-4) and column(0-19)</i><br>
+  <b>lcd_on()</b> - <i>Turn on display</i><br>
+  <b>lcd_off()</b> - <i>Turn off display</i><br>
+  
 Long strings will wrap to the next line.
 If you try to print beyond the bottom of the screen it simply cuts it off.
 
